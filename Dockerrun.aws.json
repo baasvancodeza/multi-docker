@@ -5,7 +5,8 @@
 	  "name": "client",
 	  "image": "baasvancodeza/multi-cleint",
 	  "hostname": "client",
-	  "essential": false
+	  "essential": false,
+	  "memoryReservation": 256
 	},
 	{
 	  "name": "server",
