@@ -23,14 +23,14 @@ after_succes:
   - docker push baasvancodeza/multi-nginx
   - docker push baasvancodeza/multi-worker
 
-#deploy:
-#  provider: elasticbeanstalk
-#  region: "eu-west-1"
-#  app: "docker-react-training"
-#  env: "DockerReactTraining-env"
-#  bucket_name: "elasticbeanstalk-eu-west-1-211332116103"
-#  bucket_path: "docker-react-training"
-#  on:
-#    branch: master
-#  access_key_id: $AWS_ACCESS_KEY
-#  secret_access_key: $AWS_SECRET_KE
+deploy:
+  provider: elasticbeanstalk
+  region: "eu-west-1"
+  app: "multi-docker"
+  env: "MultiDocker-env"
+  bucket_name: "elasticbeanstalk-eu-west-1-211332116103"
+  bucket_path: "docker-multi"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KE

@@ -1,0 +1,35 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "ContainerDefinitions": [
+    {
+	  "name": "client",
+	  "image": "baasvancodeza/multi-cleint",
+	  "hostname": "client",
+	  "essential": false
+	},
+	{
+	  "name": "server",
+	  "image": "baasvancodeza/multi-server",
+	  "hostname": "api",
+	  "essential": false
+	},
+	{
+	  "name": "worker",
+	  "image": "baasvancodeza/multi-worker",
+	  "essential": false
+	},
+	{
+	  "name": "nginx",
+	  "image": "baasvancodeza/multi-nginx",
+	  "essential": true,
+	  "portMappings": [
+	    {
+		  "hostPort": 80,
+		  "containerPort": 80
+		}
+	  ],
+	  "links": ["client","server"]
+	}
+  ]
+}
+
