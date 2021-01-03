@@ -16,7 +16,7 @@ after_succes:
   - docker build -t baasvancodeza/multi-nginx ./nginx
   - docker build -t baasvancodeza/multi-worker ./worker
   # Login to dockerhub
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --pasword-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Push images to dockerhub
   - docker push baasvancodeza/multi-cleint
   - docker push baasvancodeza/multi-server
